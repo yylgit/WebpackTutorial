@@ -38,4 +38,8 @@ hash  为生成的html引用的js添加hash值<script src="UIStuff.js?6f347301ad
 默认所有的chunks都会在html上引入，chunks: ['index'] 是筛选html引用的chunk
 excludeChunks: ['index'] 排除不引用的chunk,
 inject 控制chunk插入的地方 ，默认是body里面
+
+CommonsChunkPlugin   会把被两个以上的chunk调用的部分抽取出来放到一个文件中，在用到的
+chunk中调用其模块，模块都是挂在。 如果不用这个插件，则就是以每一个文件为一个单元进行模块的调用，
+
 */
