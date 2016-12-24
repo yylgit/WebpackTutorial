@@ -1,0 +1,1 @@
+document.body.innerHTML="<h1>加载js文件成功！</h1>"
