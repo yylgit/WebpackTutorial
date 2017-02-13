@@ -2,10 +2,10 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
-var chunksort = ['vender','common','global','page1','page2'];
+var chunksort = ['boot','vender','common','global'];
 module.exports = {
     entry: {
-        vender:['./src2/Vue.js','./src2/vender.js'],
+        vender:['./src2/Vue.js','./src2/vender.js'],  //指明vender的库
         common: ['./src2/component1.js','./src2/component2.js'],
         global:['./src2/global.js'], //需要全局进行配置的代码
         page1: ['./src2/page1.js'],
@@ -23,7 +23,7 @@ module.exports = {
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
-            name: ['common','vender','webpack-bootstrap'], 
+            name: ['common','vender','boot'], 
             filename: '[name].[chunkhash].js',
             minChunks: 2
         }),
